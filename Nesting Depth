@@ -3,10 +3,10 @@
 using namespace std;
 
 int main() {
-int taliya;
-    cin >> taliya;
-for(int ramlal=0;ramlal<taliya;ramlal++){
-   string seeta,filhal;
+int ta;
+    cin >> ta;
+for(int z=0;z<ta;z++){
+   string seeta,final;
    cin >> seeta;
    int current=0;
    char malkesh[seeta.length()+1];
@@ -14,25 +14,26 @@ for(int ramlal=0;ramlal<taliya;ramlal++){
    for(int dhaval=0;dhaval<seeta.length();dhaval++){
       if(current<((int)(malkesh[dhaval])-48)){
           for(int pratik=0;pratik<(((int)(malkesh[dhaval])-48)-current);pratik++){
-              filhal+='(';
+              final+='(';
           }
           current+=(((int)(malkesh[dhaval])-48)-current);
-          filhal+=malkesh[dhaval];
+          final+=malkesh[dhaval];
       }
       else if(current>((int)(malkesh[dhaval])-48)){
           for(int pratik=0;pratik<(current-((int)(malkesh[dhaval])-48));pratik++){
-              filhal+=')';
+              final+=')';
           }
           current-=(current-((int)(malkesh[dhaval])-48));
-          filhal+=malkesh[dhaval];
+          final+=malkesh[dhaval];
       }
       else{
-          filhal+=malkesh[dhaval];
+          final+=malkesh[dhaval];
       }
    }
+   
    for(int dhaval=0;dhaval<current;dhaval++){
-       filhal+=')';
+       final+=')';
    }
-   cout << "Case #" << (ramlal+1) << ": "<< filhal << "\n";
+   cout << "Case #" << (z+1) << ": "<< final << "\n";
 }
 }

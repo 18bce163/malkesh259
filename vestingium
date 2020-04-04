@@ -6,20 +6,29 @@ using namespace std;
 signed main()
 {
     int jaya,maya=1;
+    
+    
     cin>>jaya;
+    
+    
     while(jaya--)
     {
         int kaya;
+        
         cin>>kaya;
+        
         int mahabharat[kaya][kaya];
+        
+       
         set <int>ram;
         int hanuman=0,krishna=0,bhagvan=0;
-        for(int ravan=0;ravan<kaya;ravan++)
+        
+        for(int y=0;y<kaya;y++)
         {
-            for(int lok=0;lok<kaya;lok++)
+            for(int z=0;z<kaya;z++)
             {
-                cin>>mahabharat[ravan][lok];
-                ram.insert(mahabharat[ravan][lok]);
+                cin>>mahabharat[y][z];
+                ram.insert(mahabharat[y][z]);
             }
             if(ram.size()!=kaya)
             {
@@ -28,11 +37,12 @@ signed main()
             }
             ram.clear();
         }
-        for(int ravan=0;ravan<kaya;ravan++)
+        
+        for(int y=0;y<kaya;y++)
         {
-            for(int lok=0;lok<kaya;lok++)
+            for(int z=0;z<kaya;z++)
             {
-                ram.insert(mahabharat[lok][ravan]);
+                ram.insert(mahabharat[z][y]);
             }
             if(ram.size()!=kaya)
             {
@@ -41,8 +51,9 @@ signed main()
             ram.clear();
 
         }
-        for(int ravan=0;ravan<kaya;ravan++)
-        {bhagvan=bhagvan+mahabharat[ravan][ravan];
+        
+        for(int y=0;y<kaya;y++)
+        {bhagvan=bhagvan+mahabharat[y][y];
         }
         
 

@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
+#define int long long
+using namespace std;
+signed main()
+{
+    int jaya,maya=1;
+    cin>>jaya;
+    while(jaya--)
+    {
+        int kaya;
+        cin>>kaya;
+        int mahabharat[kaya][kaya];
+        set <int>ram;
+        int hanuman=0,krishna=0,bhagvan=0;
+        for(int ravan=0;ravan<kaya;ravan++)
+        {
+            for(int lok=0;lok<kaya;lok++)
+            {
+                cin>>mahabharat[ravan][lok];
+                ram.insert(mahabharat[ravan][lok]);
+            }
+            if(ram.size()!=kaya)
+            {
+                hanuman++;
+
+            }
+            ram.clear();
+        }
+        for(int ravan=0;ravan<kaya;ravan++)
+        {
+            for(int lok=0;lok<kaya;lok++)
+            {
+                ram.insert(mahabharat[lok][ravan]);
+            }
+            if(ram.size()!=kaya)
+            {
+                krishna++;
+            }
+            ram.clear();
+
+        }
+        for(int ravan=0;ravan<kaya;ravan++)
+        {bhagvan=bhagvan+mahabharat[ravan][ravan];
+        }
+        
+
+        cout<<"Case #"<<maya++<<":"<<" "<<bhagvan<<" "<<hanuman<<" "<<krishna<<endl;
+        
+    }
+}

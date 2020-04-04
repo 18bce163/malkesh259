@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+int taliya;
+    cin >> taliya;
+for(int ramlal=0;ramlal<taliya;ramlal++){
+   string seeta,filhal;
+   cin >> seeta;
+   int current=0;
+   char malkesh[seeta.length()+1];
+   strcpy(malkesh, seeta.c_str());
+   for(int dhaval=0;dhaval<seeta.length();dhaval++){
+      if(current<((int)(malkesh[dhaval])-48)){
+          for(int pratik=0;pratik<(((int)(malkesh[dhaval])-48)-current);pratik++){
+              filhal+='(';
+          }
+          current+=(((int)(malkesh[dhaval])-48)-current);
+          filhal+=malkesh[dhaval];
+      }
+      else if(current>((int)(malkesh[dhaval])-48)){
+          for(int pratik=0;pratik<(current-((int)(malkesh[dhaval])-48));pratik++){
+              filhal+=')';
+          }
+          current-=(current-((int)(malkesh[dhaval])-48));
+          filhal+=malkesh[dhaval];
+      }
+      else{
+          filhal+=malkesh[dhaval];
+      }
+   }
+   for(int dhaval=0;dhaval<current;dhaval++){
+       filhal+=')';
+   }
+   cout << "Case #" << (ramlal+1) << ": "<< filhal << "\n";
+}
+}
